@@ -1,6 +1,5 @@
 package br.com.dio.reactiveflashecard.core.validation;
 
-import io.netty.util.internal.StringUtil;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +15,7 @@ public class MongoIdValidator implements ConstraintValidator<MongoId, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        log.info("====");
+        log.info("==== cheking if is a valid mongoDb id");
         return StringUtils.isAllBlank(value) && ObjectId.isValid(value);
     }
 }
