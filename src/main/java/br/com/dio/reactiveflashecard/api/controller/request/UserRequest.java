@@ -1,4 +1,4 @@
-package br.com.dio.reactiveflashecard.api.controller.response;
+package br.com.dio.reactiveflashecard.api.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
