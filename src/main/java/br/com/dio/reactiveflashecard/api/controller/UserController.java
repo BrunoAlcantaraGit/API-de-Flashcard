@@ -27,10 +27,10 @@ public class UserController {
     @PostMapping(consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(CREATED)
 
-    public Mono<UserResponse> salve(@Valid @RequestBody final UserRequest request){
+    public Mono<UserResponse> save(@Valid @RequestBody final UserRequest request){
         return userService.sava(userMapper.toDocument(request))
                 .doFirst(()-> log.info("===Saving a user with follow date {}", request))
-                .map(use -> userMapper.toResponse(use));
+                .map(userMapper::toResponse);
 
     }
 }
