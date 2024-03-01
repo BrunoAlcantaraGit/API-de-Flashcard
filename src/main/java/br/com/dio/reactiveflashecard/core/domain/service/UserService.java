@@ -17,7 +17,7 @@ public class UserService {
     @Autowired
     private final UserRepository userRepository;
 
-    public Mono<UserDocument>sava( final UserDocument document){
+    public Mono<UserDocument>save( final UserDocument document){
         return userRepository.save(document)
                 .doFirst(()->log.info("==try to save follow document {}",document));//Retorna log de persistência na operação
     }

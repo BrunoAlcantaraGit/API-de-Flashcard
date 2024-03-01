@@ -11,7 +11,7 @@ import org.mapstruct.Mapping;
 public interface UserMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "createdAt", ignore = true)
-    @Mapping(target = "updateAt",ignore = true )
+    @Mapping(target = "updatedAt",ignore = true )
 
     UserDocument toDocument(final UserRequest request);
 

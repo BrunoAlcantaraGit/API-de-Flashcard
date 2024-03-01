@@ -16,7 +16,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Validated
 @RestController
-@RequestMapping
+@RequestMapping("users")
 @Slf4j
 @AllArgsConstructor
 public class UserController {
@@ -28,7 +28,7 @@ public class UserController {
     @ResponseStatus(CREATED)
 
     public Mono<UserResponse> save(@Valid @RequestBody final UserRequest request){
-        return userService.sava(userMapper.toDocument(request))
+        return userService.save(userMapper.toDocument(request))
                 .doFirst(()-> log.info("===Saving a user with follow date {}", request))
                 .map(userMapper::toResponse);
 
